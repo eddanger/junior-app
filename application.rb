@@ -12,7 +12,7 @@ class MyApplication < Junior::Application
   Dir.glob(File.join(File.dirname(__FILE__), 'controllers/*.rb')).each { |f| require f }
   Dir.glob(File.join(File.dirname(__FILE__), 'models/*.rb')).each { |f| require f }
   
-  DataMapper.setup(:default, 'sqlite3:junior.db')
+  DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3:junior.db')
   
   DataMapper.auto_upgrade!
   
