@@ -1,0 +1,14 @@
+.header
+  %h1 User
+
+.content
+
+  = render 'views/_nav.haml'
+  
+  %h2= @user.name
+  
+  %p
+    %a{:href => "/users/#{@user.id}/edit"} Edit |
+    %a{:href => "/users/#{@user.id}/delete"} Delete
+  
+  %p= "Created at #{@user.created_at.strftime( '%a %b %d %H:%M')}"

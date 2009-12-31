@@ -1,0 +1,13 @@
+.header
+  %h1 User
+
+.content
+
+  = render 'views/_nav.haml'
+  
+  %h2= "Delete #{@user.name}?"
+  
+  %form{ :action => "/users/#{@user.id}", :method => 'post' }
+    %input{ :type => 'hidden', :name => '_method', :value => 'delete' }
+    
+    %input{ :type => 'submit', :value => 'Delete User' }

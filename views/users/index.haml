@@ -1,0 +1,18 @@
+.header
+  %h1 Users
+
+.content
+
+  = render 'views/_nav.haml'
+
+  %ul
+    %li
+      %a{:href => '/users/new'} Add User
+  
+  - if @users.empty?
+    %p No Users
+  - else
+    - @users.each do |user|
+      .user
+        %a{:href => "/users/#{user.id}"}= "#{user.name}"
+        = "(Created at #{user.created_at.strftime( '%a %b %d %H:%M')})"
