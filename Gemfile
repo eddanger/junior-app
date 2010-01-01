@@ -5,6 +5,7 @@ only :app do
   gem 'junior'
   gem 'haml'
   gem 'do_sqlite3'
+  gem 'do_postgres'
   gem 'dm-core'
   gem 'dm-types'
   gem 'dm-timestamps'
