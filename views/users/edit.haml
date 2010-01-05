@@ -3,7 +3,7 @@
 
 .content
 
-  = render 'views/_nav.haml'
+  = partial 'views/_nav.haml'
 
   %form{ :action => "/users/#{@user.id}", :method => 'post' }
     %input{ :type => 'hidden', :name => '_method', :value => 'put' }

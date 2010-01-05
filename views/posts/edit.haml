@@ -1,0 +1,26 @@
+.header
+  %h1 Post
+
+.content
+
+  = partial 'views/_nav.haml'
+
+  %form{ :action => "/posts/#{@post.id}", :method => 'post' }
+    %input{ :type => 'hidden', :name => '_method', :value => 'put' }
+
+    .form_item
+      .label
+        %label{ :for => 'post_title' } Title
+      .input
+        %input{ :type => 'text', :name => 'post[title]', :id => 'post_title', :value => @post.title }
+
+    .form_item
+      .label
+        %label{ :for => 'post_body' } Body
+      .input
+        %textarea{ :name => 'post[body]', :id => 'post_body' }= @post.body
+
+
+    %input{ :type => 'submit', :value => 'Update Post' }
+    
+    

@@ -1,0 +1,16 @@
+.header
+  %h1 Post
+
+.content
+
+  = partial 'views/_nav.haml'
+  
+  %h2= @post.title
+  
+  %p= @post.body
+  
+  %p
+    %a{:href => "/posts/#{@post.id}/edit"} Edit |
+    %a{:href => "/posts/#{@post.id}/delete"} Delete
+  
+  %p= "Created at #{@post.created_at.strftime( '%a %b %d %H:%M')}"

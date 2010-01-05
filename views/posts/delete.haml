@@ -1,0 +1,13 @@
+.header
+  %h1 Post
+
+.content
+
+  = partial 'views/_nav.haml'
+  
+  %h2= "Delete #{@post.title}?"
+  
+  %form{ :action => "/posts/#{@post.id}", :method => 'post' }
+    %input{ :type => 'hidden', :name => '_method', :value => 'delete' }
+    
+    %input{ :type => 'submit', :value => 'Delete Post' }
